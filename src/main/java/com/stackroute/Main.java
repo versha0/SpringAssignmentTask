@@ -17,24 +17,24 @@ public class Main {
 
         //USING APPLICATION CONTEXT
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie=(Movie)applicationContext.getBean("movie1", Movie.class);
-        Movie movie1=(Movie)applicationContext.getBean("movie2", Movie.class);
-        Movie movie3=(Movie)applicationContext.getBean("movie3", Movie.class);
-        Movie moviesame=(Movie)applicationContext.getBean("movie4", Movie.class);
-        Movie movie4=(Movie)applicationContext.getBean("movie1", Movie.class);
-        Movie movie5=(Movie)applicationContext.getBean("movie2", Movie.class);
+        Movie movie=(Movie)applicationContext.getBean("movie3", Movie.class);
+//        Movie movie1=(Movie)applicationContext.getBean("movie2", Movie.class);
+//        Movie movie3=(Movie)applicationContext.getBean("movie3", Movie.class);
+//        Movie moviesame=(Movie)applicationContext.getBean("movie4", Movie.class);
+//        Movie movie4=(Movie)applicationContext.getBean("movie1", Movie.class);
+//        Movie movie5=(Movie)applicationContext.getBean("movie2", Movie.class);
         //FOR THE PROTOTYPE
-        if(movie==movie4){
-            System.out.println(true);
-        } else{
-            System.out.println(false);
-        }
-        // FOR THE SINGLETON
-        if(movie1==movie5){
-            System.out.println(true);
-        } else{
-            System.out.println(false);
-        }
+//        if(movie==movie4){
+//           System.out.println(true);
+//        } else{
+//           System.out.println(false);
+//        }
+//        // FOR THE SINGLETON
+//        if(movie1==movie5){
+//            System.out.println(true);
+//       } else{
+//           System.out.println(false);
+//        }
 
 
         //to get the Movie bean by its two different name.
@@ -49,11 +49,11 @@ public class Main {
         //System.out.println(movieReg);
         //System.out.println(movieFirst.getActor());
         System.out.println(movie.getActor());
-        System.out.println(movie1.getActor());
+//        System.out.println(movie1.getActor());
 
         //THEY HAVE SAME SAME HENCE WILL PRINT SAME VALUE
-        System.out.println(movie3.getActor());
-        System.out.println(moviesame.getActor());
+        //System.out.println(movie3.getActor());
+        //System.out.println(moviesame.getActor());
 
 
 
