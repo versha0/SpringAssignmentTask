@@ -1,6 +1,7 @@
 package com.stackroute;
 
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,8 +14,10 @@ public class Main {
 
 
             AbstractApplicationContext  context = new ClassPathXmlApplicationContext("beans.xml");
-        BeanLifecycleDemoBean beanLifecycleDemoBean=(BeanLifecycleDemoBean)context.getBean("newBean") ;
-        System.out.println(beanLifecycleDemoBean);
+        //BeanLifecycleDemoBean beanLifecycleDemoBean=(BeanLifecycleDemoBean)context.getBean("newBean") ;
+        //System.out.println(beanLifecycleDemoBean);
+        //BeanPostProcessorDemoBean beanPostProcessorDemoBean=(BeanPostProcessorDemoBean) context.getBean("newBean1") ;
+        //System.out.println(beanPostProcessorDemoBean);
         context.registerShutdownHook();
         //USING APPLICATION CONTEXT
         //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
