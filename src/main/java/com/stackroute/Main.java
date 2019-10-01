@@ -6,6 +6,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 public class Main {
@@ -15,9 +16,13 @@ public class Main {
         //XmlBeanFactory xmlBeanFactory= new XmlBeanFactory ( new ClassPathResource("beans.xml"));
         //Movie movieFirst= (Movie)xmlBeanFactory.getBean("movie1", Movie.class);
 
+
+            AbstractApplicationContext  context = new ClassPathXmlApplicationContext("beans.xml");
+            Movie appcontext= (Movie)context.getBean("Movie");
+            appcontext.print();
         //USING APPLICATION CONTEXT
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie=(Movie)applicationContext.getBean("movie3", Movie.class);
+        //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        //Movie movie=(Movie)applicationContext.getBean("movie3", Movie.class);
 //        Movie movie1=(Movie)applicationContext.getBean("movie2", Movie.class);
 //        Movie movie3=(Movie)applicationContext.getBean("movie3", Movie.class);
 //        Movie moviesame=(Movie)applicationContext.getBean("movie4", Movie.class);
@@ -48,7 +53,7 @@ public class Main {
         //PRINTING ALL THE ACTORS
         //System.out.println(movieReg);
         //System.out.println(movieFirst.getActor());
-        System.out.println(movie.getActor());
+        //System.out.println(movie.getActor());
 //        System.out.println(movie1.getActor());
 
         //THEY HAVE SAME SAME HENCE WILL PRINT SAME VALUE
