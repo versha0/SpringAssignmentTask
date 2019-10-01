@@ -28,7 +28,10 @@
     <!--    <bean class="com.stackroute.domain.Movie" id="Movie4"  >-->
     <!--        <constructor-arg name="actor" ref="actor1"/>-->
     <!--    </bean>-->
-    <bean id="Movie" class="com.stackroute.domain.Movie" autowire="constructor">
-        <!--     <constructor-arg name ="actor" ref ="actor"/>-->
+<!--    <bean id="Movie" class="com.stackroute.domain.Movie" autowire="constructor">-->
+<!--        &lt;!&ndash;     <constructor-arg name ="actor" ref ="actor"/>&ndash;&gt;-->
+<!--    </bean>-->
+    <bean id="newBean" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="Init" destroy-method="Destroy">
+            <property name ="message" value="Iaminsidethebeandemobean"/>
     </bean>
 </beans>

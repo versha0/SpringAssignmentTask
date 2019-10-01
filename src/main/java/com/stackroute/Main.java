@@ -1,14 +1,9 @@
 package com.stackroute;
 
-import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.context.ApplicationContext;
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
+
 public class Main {
     public static void main( String[] args )
     {
@@ -18,8 +13,9 @@ public class Main {
 
 
             AbstractApplicationContext  context = new ClassPathXmlApplicationContext("beans.xml");
-            Movie appcontext= (Movie)context.getBean("Movie");
-            appcontext.print();
+        BeanLifecycleDemoBean beanLifecycleDemoBean=(BeanLifecycleDemoBean)context.getBean("newBean") ;
+        System.out.println(beanLifecycleDemoBean);
+        context.registerShutdownHook();
         //USING APPLICATION CONTEXT
         //ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
         //Movie movie=(Movie)applicationContext.getBean("movie3", Movie.class);
